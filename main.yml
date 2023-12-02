@@ -1,0 +1,12 @@
+---
+- name: "Customize Kali Linux"
+  hosts: localhost
+  connection: local
+  tasks:
+#    - name: Display Ansible Environment Variables
+#      debug:
+#        var: hostvars[inventory_hostname]
+  roles:
+    - role: "roles/configure-tmux/"
+    - role: "roles/configure-terminal/"
+    - role: "roles/install-tools/"

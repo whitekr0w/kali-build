@@ -1,0 +1,14 @@
+---
+- name: Install arjun
+  become: true
+  become_method: sudo
+  pip:
+    name: arjun
+    executable: pip3
+
+- name: Install bloodhound
+  become: true
+  become_method: sudo
+  apt:
+    name: bloodhound
+    state: present
