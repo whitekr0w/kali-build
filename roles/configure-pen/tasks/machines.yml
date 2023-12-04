@@ -1,0 +1,11 @@
+---
+- name: Create machine directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0750
+  loop:
+    - "{{ ansible_env.HOME }}/pen/machines/"
+    - "{{ ansible_env.HOME }}/pen/machines/offsec/"
+    - "{{ ansible_env.HOME }}/pen/machines/htb/"
+    - "{{ ansible_env.HOME }}/pen/machines/thm/"

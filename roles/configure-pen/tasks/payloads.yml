@@ -1,0 +1,11 @@
+---
+- name: Create payload directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0750
+  loop:
+    - "{{ ansible_env.HOME }}/pen/payload/"
+    - "{{ ansible_env.HOME }}/pen/payload/linux/"
+    - "{{ ansible_env.HOME }}/pen/payload/windows/"
+    - "{{ ansible_env.HOME }}/pen/payload/web/"

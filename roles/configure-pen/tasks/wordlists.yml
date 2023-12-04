@@ -1,0 +1,19 @@
+---
+- name: Create wordlist directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0750
+  loop:
+    - "{{ ansible_env.HOME }}/pen/wordlists/"
+    - "{{ ansible_env.HOME }}/pen/wordlists/fuzzing/"
+    - "{{ ansible_env.HOME }}/pen/wordlists/fuzzing/protocols/"
+    - "{{ ansible_env.HOME }}/pen/wordlists/fuzzing/linux/"
+    - "{{ ansible_env.HOME }}/pen/wordlists/fuzzing/web/"
+    - "{{ ansible_env.HOME }}/pen/wordlists/fuzzing/windows/"
+    - "{{ ansible_env.HOME }}/pen/wordlists/credentials/"
+    - "{{ ansible_env.HOME }}/pen/wordlists/credentials/usernames/"
+    - "{{ ansible_env.HOME }}/pen/wordlists/credentials/passwords/"
+    - "{{ ansible_env.HOME }}/pen/wordlists/misc/"
+    - "{{ ansible_env.HOME }}/pen/wordlists/patterns/"
+

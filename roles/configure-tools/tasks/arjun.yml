@@ -1,0 +1,7 @@
+---
+- name: Install arjun
+  become: true
+  become_method: sudo
+  pip:
+    name: arjun
+    executable: pip3

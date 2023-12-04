@@ -1,0 +1,19 @@
+- name: "Set default shell to Bash"
+  become: true
+  become_method: sudo
+  shell: chsh -s /bin/bash {{ ansible_user_id }}
+  when: "'/bin/zsh' in ansible_user_shell"
+
+- name: "Copy .bashrc config"
+  become: true
+  become_method: sudo
+  copy:
+    src: "{{ role_path }}/files/.bashrc"
+    dest: "{{ ansible_env.HOME }}"
+
+- name: "Copy .bash_aliases"
+  become: true
+  become_method: sudo
+  copy:
+    src: "{{ role_path }}/files/.bash_aliases"
+    dest: "{{ ansible_env.HOME }}"

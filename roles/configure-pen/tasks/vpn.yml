@@ -1,0 +1,13 @@
+---
+- name: Create vpn directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0750
+  loop:
+    - "{{ ansible_env.HOME }}/pen/vpn/"
+    - "{{ ansible_env.HOME }}/pen/vpn/offsec/"
+    - "{{ ansible_env.HOME }}/pen/vpn/htb/"
+    - "{{ ansible_env.HOME }}/pen/vpn/thm/"
+
+

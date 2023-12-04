@@ -1,0 +1,12 @@
+- name: Install bloodhound
+  become: true
+  become_method: sudo
+  apt:
+    name: bloodhound
+    state: present
+
+- name: Set neo4j password
+  become: true
+  become_method: sudo
+  ansible.builtin.command:
+    cmd: /usr/share/neo4j/bin/neo4j-admin set-initial-password bloodhound
