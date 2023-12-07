@@ -1,17 +1,17 @@
 ---
 # tasks file for configure-system
-- name: Install bash config
+- name: "[+] Install Bash config"
   ansible.builtin.include_tasks:
     file: bash.yml
 
-- name: Install tmux config
+- name: "[+] Install Tmux config"
   ansible.builtin.include_tasks:
     file: tmux.yml
 
-- name: Install qterm config
+- name: "[+] Install QTerm config"
   ansible.builtin.include_tasks:
     file: qterm.yml
 
-- name: Install xfce config
+- name: "[+] Install XFCE config"
   ansible.builtin.include_tasks:
     file: xfce.yml

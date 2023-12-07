@@ -1,11 +1,12 @@
 ---
 # tasks file for configure-tmux
 - name: "Install tmux"
+  become: true
+  become_method: sudo
   apt:
     name: tmux
     state: present
-  become: true
-  become_method: sudo
+  
 
 - name: "Copy tmux config"
   copy:

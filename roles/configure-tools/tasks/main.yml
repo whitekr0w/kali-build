@@ -1,4 +1,4 @@
 ---
-- name: Install arjun
+- name: "[+] Install Arjun"
   ansible.builtin.include_tasks:
     file: arjun.yml

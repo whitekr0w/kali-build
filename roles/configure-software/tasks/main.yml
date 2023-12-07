@@ -1,0 +1,12 @@
+---
+- name: "[+] Install VSCode"
+  ansible.builtin.include_tasks:
+    file: vscode.yml
+
+- name: "[+] Install Bloodhound"
+  ansible.builtin.include_tasks:
+    file: bloodhound.yml
+
+- name: "[+] Install Obsidian"
+  ansible.builtin.include_tasks:
+    file: obsidian.yml

@@ -1,23 +1,23 @@
 ---
 # tasks file for roles/configure-pen/
-- name: Create init pen directory
+- name: "[+] Create init pen directory"
   ansible.builtin.file:
     path: "{{ ansible_env.HOME }}/pen"
     state: directory
     mode: '0750'
 
-- name: Install machines folder
+- name: "[+] Install machines folder"
   ansible.builtin.include_tasks:
     file: machines.yml
 
-- name: Install vpn folder
+- name: "[+] Install VPN folder"
   ansible.builtin.include_tasks:
     file: vpn.yml
 
-- name: Install wordlists folder
+- name: "[+] Install wordlists folder"
   ansible.builtin.include_tasks:
     file: wordlists.yml
 
-- name: Install payloads folder
+- name: "[+] Install payloads folder"
   ansible.builtin.include_tasks:
     file: payloads.yml

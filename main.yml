@@ -2,6 +2,12 @@
 - name: "Customize Kali Linux"
   hosts: localhost
   connection: local
+
+  vars_prompt:
+  - name: "ansible_become_pass"
+    prompt: "Sudo password"
+    private: yes
+    
   tasks:
 #    - name: Display Ansible Environment Variables
 #      debug:

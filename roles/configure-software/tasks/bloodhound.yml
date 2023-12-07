@@ -1,11 +1,12 @@
-- name: Install bloodhound
+---
+- name: Install Bloodhound
   become: true
   become_method: sudo
   apt:
     name: bloodhound
     state: present
 
-- name: Set neo4j password
+- name: Set Neo4J password
   become: true
   become_method: sudo
   ansible.builtin.command:

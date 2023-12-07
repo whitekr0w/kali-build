@@ -1,8 +1,0 @@
----
-- name: Install vscode
-  ansible.builtin.include_tasks:
-    file: vscode.yml
-
-- name: Install bloodhound
-  ansible.builtin.include_tasks:
-    file: bloodhound.yml

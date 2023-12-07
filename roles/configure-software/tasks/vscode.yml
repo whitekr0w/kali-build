@@ -1,0 +1,38 @@
+---
+- name: Add VSCode repo
+  become: true
+  become_method: sudo
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+    state: present
+
+- name: Install dependencies
+  become: true
+  become_method: sudo
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - software-properties-common
+    - apt-transport-https
+    - wget
+
+- name: Import Microsoft GPG key
+  become: true
+  become_method: sudo
+  ansible.builtin.apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: Update package cache
+  become: true
+  become_method: sudo
+  apt:
+    update_cache: yes
+
+- name: Install VSCode
+  become: true
+  become_method: sudo
+  apt:
+    name: code
+    state: present
