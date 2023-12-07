@@ -8,6 +8,10 @@
   ansible.builtin.include_tasks:
     file: tmux.yml
 
-# - name: Install xfce config
-#  ansible.builtin.include_tasks:
-#    file: xfce.yml
+- name: Install qterm config
+  ansible.builtin.include_tasks:
+    file: qterm.yml
+
+- name: Install xfce config
+  ansible.builtin.include_tasks:
+    file: xfce.yml

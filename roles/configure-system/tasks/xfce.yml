@@ -1,0 +1,10 @@
+---
+- name: Copy XFCE4 panel to local
+  ansible.builtin.copy:
+    src:  "{{ role_path }}/files/whitekr0w.tar.bz2"
+    dest: "{{ ansible_user_dir }}/.local/share/xfce4-panel-profiles/"
+    remote_src: true
+
+- name: Restart XFCE4 Panel
+  ansible.builtin.shell:
+    cmd: "xfce4-panel-profiles load {{ ansible_user_dir }}/.local/share/xfce4-panel-profiles/whitekr0w.tar.bz2"

@@ -1,0 +1,37 @@
+---
+- name: "Copy color scheme"
+  become: true
+  become_method: sudo
+  copy:
+    src: "{{ role_path }}/files/whitekr0w.colorscheme"
+    dest: "/usr/share/qtermwidget5/color-schemes/"
+
+- name: Set qterm config to color scheme
+  become: true
+  become_method: sudo
+  community.general.ini_file:
+    path: "{{ ansible_env.HOME }}/.config/qterminal.org/qterminal.ini"
+    section: General
+    option: colorScheme
+    value: whitekr0w
+    state: present
+
+- name: Set qterm font config to Fira Code 
+  become: true
+  become_method: sudo
+  community.general.ini_file:
+    path: "{{ ansible_env.HOME }}/.config/qterminal.org/qterminal.ini"
+    section: General
+    option: fontFamily
+    state: present
+    value: Fira Code SemiBold
+
+- name: Set qterm font config to 12pt
+  become: true
+  become_method: sudo
+  community.general.ini_file:
+    path: "{{ ansible_env.HOME }}/.config/qterminal.org/qterminal.ini"
+    section: General
+    option: fontSize
+    value: 12
+    state: present
